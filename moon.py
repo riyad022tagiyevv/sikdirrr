@@ -39,7 +39,7 @@ def start(client, message):
         )
     )
     
-#kömək mesajı
+#yardım mesajı
 
 @bot.on_message(filters.command(['help']))
 def help(client, message):
