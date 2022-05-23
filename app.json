@@ -1,9 +1,9 @@
 {
-    "name": "DemonMusicBot",
-    "description": "Azərbaycan dilində song botu.",
+    "name": "MoonMusicBot",
+    "description": "Telegram müzik indirme botu.",
     "logo": "https://telegra.ph/file/50694e1b2a639f38c6dfd.jpg",
     "keywords": [
-        "Demon",
+        "Moon",
         "Music",
         "Bot"
     ],
@@ -18,22 +18,27 @@
     },
     "env": {
         "API_ID": {
-            "description": "my.telegram.org saytından ala bilərsiniz.",
+            "description": "my.telegram.org dan ala bilirsiniz.",
             "value": "",
             "required": true
         },
         "API_HASH": {
-            "description": "my.telegram.org saytından ala bilərsiniz.",
+            "description": "my.telegram.org dan ala bilirsiniz.",
             "value": "",
             "required": true
         },
         "BOT_TOKEN": {
-            "description": "@Botfather botundan ala bilərsiniz.",
+            "description": "@Botfather botundan ala bilirsiniz.",
             "value": "",
             "required": true
         },
         "PLAYLIST_NAME": {
-            "description": "Playlist kanalının kullanıcı adını @ bu işarə olmadan yazın.",
+            "description": "Playlist kanalının kullanıcı adını @ bu işareti olmadan yazın.",
+            "value": "",
+            "required": true
+        },
+        "GROUP": {
+            "description": "Grubunuzun kullanıcı adını @ bu işareti olmadan yazın.",
             "value": "",
             "required": true
         },
@@ -43,12 +48,12 @@
             "required": true
         },
         "BOT_OWNER": {
-            "description": "Öz kullanıcı adınızı @ bu işarə olmadan yazın.",
+            "description": "Kendi kullanıcı adınızı @ bu işareti olmadan yazın.",
             "value": "",
             "required": true
         },
         "BOT_USERNAME": {
-            "description": "Botun kullanıcı adını @ bu işarə olmadan yazın.",
+            "description": "Botun kullanıcı adını @ bu işareti olmadan yazın.",
             "value": "",
             "required": true
         }
