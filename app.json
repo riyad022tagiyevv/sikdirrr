@@ -1,14 +1,14 @@
 {
     "name": "MoonMusicBot",
     "description": "Telegram müzik indirme botu.",
-    "logo": "https://telegra.ph/file/50694e1b2a639f38c6dfd.jpg",
+    "logo": "https://telegra.ph//file/3f772b9651aef1226650e.jpg",
     "keywords": [
         "Moon",
         "Music",
         "Bot"
     ],
-    "repository": "https://github.com/emilaza/sn-ar",
-    "success_url": "https://github.com/emilaza/sn-ar",
+    "repository": "https://github.com/amahocam/M-zik-indirme-download-",
+    "success_url": "https://github.com/amahocam/M-zik-indirme-download-",
     "image": "heroku/python",
     "formation": {
         "worker": {
