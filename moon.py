@@ -24,13 +24,14 @@ bot = Client(
 
 @bot.on_message(filters.command(['start']))
 def start(client, message):
+    await message.reply_sticker("CAACAgQAAxkBAAI8bmKIvgnlJyCrq9HIxSvCZCbm5CEjAAIaEAACpvFxHg-Z648-SCRWJAQ")
     moon = f'👋 **Selam** {message.from_user.mention}\n\n**ℹ️ Ben müzik indirme botuyum istediğin müziği indirebilirim**\n\n**✅ Yardım için** /help **komutunu kullanın**'
     message.reply_text(
         text=moon, 
         quote=False,
         reply_markup=InlineKeyboardMarkup(
             [[
-                    InlineKeyboardButton('Graiflyrics Kanalı ❄️', url=f'https://t.me/{Config.GROUP}'),
+                    InlineKeyboardButton('Support Grup ❄️', url=f'https://t.me/{Config.GROUP}'),
                   ],[
                     InlineKeyboardButton('Playlist 🎵', url=f'https://t.me/{Config.PLAYLIST_NAME}')
                 ]
@@ -42,13 +43,13 @@ def start(client, message):
 
 @bot.on_message(filters.command(['help']))
 def help(client, message):
-    helptext = f'**Müzik indirmek için /bul komutunu kullabilirsin ⤵️**\n\n**Örnek:**\n**1.** `/bul gece mavisi`\n**2.** `/bul https://youtu.be/qLXUa89Q5WI`\n\n**İndirdiğin müzikler [gяαιfℓуяι¢ѕ ρℓαуℓιѕт](t.me/graiflyrics) kanalında paylaşılacaktır.**'
+    helptext = f'**Müzik indirmek için /bul komutunu kullabilirsin ⤵️**\n\n**Örnek:**\n**1.** `/bul gece mavisi`\n**2.** `/bul https://youtu.be/qLXUa89Q5WI`\n\n**'
     message.reply_text(
         text=helptext, 
         quote=False,
         reply_markup=InlineKeyboardMarkup(
             [[
-                    InlineKeyboardButton('Graiflyrics Kanalı ❄️', url='t.me/graiflyrics'),
+                    InlineKeyboardButton('Support Grup ❄️', url=f'https://t.me/{Config.GROUP}'),
                   ],[
                     InlineKeyboardButton('Playlist 🎵', url=f'https://t.me/{Config.PLAYLIST_NAME}')
                 ]
@@ -61,7 +62,7 @@ def help(client, message):
 async def live(client: Client, message: Message):
     livemsg = await message.reply_text('`Merhaba Sahip Bey 🖤`')
     
-#musiqi əmri#
+#musik indirme#
 
 @bot.on_message(filters.command("bul") & ~filters.edited)
 def bul(_, message):
