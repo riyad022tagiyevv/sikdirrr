@@ -22,9 +22,7 @@ bot = Client(
 
 #start mesajı
 
-@Client.on_message(
-    command(["start"]) & filters.private & ~filters.edited
-)
+@bot.on_message(filters.command(['start']))
 async def start_(client: Client, message: Message):
     await message.reply_sticker("CAACAgQAAxkBAAI8bmKIvgnlJyCrq9HIxSvCZCbm5CEjAAIaEAACpvFxHg-Z648-SCRWJAQ")
     await message.reply_text(
