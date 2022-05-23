@@ -30,7 +30,7 @@ def start(client, message):
         quote=False,
         reply_markup=InlineKeyboardMarkup(
             [[
-                    InlineKeyboardButton('Graiflyrics Kanalı ❄️', url='t.me/graiflyrics'),
+                    InlineKeyboardButton('Graiflyrics Kanalı ❄️', url=f'https://t.me/{Config.GROUP}'),
                   ],[
                     InlineKeyboardButton('Playlist 🎵', url=f'https://t.me/{Config.PLAYLIST_NAME}')
                 ]
@@ -88,15 +88,15 @@ def bul(_, message):
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f"**🎶 [gяαιfℓуяι¢ѕ ρℓαуℓιѕт](t.me/graiflyrics) 🎶.**"
+        rep = f"**• uploader @{CONFİG BOT_USERNAME}**"
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(float(dur_arr[i])) * secmul
             secmul *= 60
         m.edit("📤 Yükleniyor..")
-        message.reply_audio(audio_file, caption=rep, parse_mode='md',quote=False, title=title, duration=dur, thumb=thumb_name, performer="@mutsuz_panda")
+        message.reply_audio(audio_file, caption=rep, parse_mode='md',quote=False, title=title, duration=dur, thumb=thumb_name")
         m.delete()
-        bot.send_audio(chat_id=Config.PLAYLIST_ID, audio=audio_file, caption=rep, performer="@graiflyrics", parse_mode='md', title=title, duration=dur, thumb=thumb_name)
+        bot.send_audio(chat_id=Config.PLAYLIST_ID, audio=audio_file, caption=rep, parse_mode='md', title=title, duration=dur, thumb=thumb_name)
     except Exception as e:
         m.edit("<b>❌ Hatanın, düzelmesini bekleyiniz.</b>")
         print(e)
