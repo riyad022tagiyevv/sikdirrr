@@ -22,13 +22,13 @@ bot = Client(
 
 #start mesajı
 
-@bot.on_message(filters.command(['start']))
-def start(client, message):
+@Client.on_message(
+    command(["start"]) & filters.private & ~filters.edited
+)
+async def start_(client: Client, message: Message):
     await message.reply_sticker("CAACAgQAAxkBAAI8bmKIvgnlJyCrq9HIxSvCZCbm5CEjAAIaEAACpvFxHg-Z648-SCRWJAQ")
-    moon = f'👋 **Selam** {message.from_user.mention}\n\n**ℹ️ Ben müzik indirme botuyum istediğin müziği indirebilirim**\n\n**✅ Yardım için** /help **komutunu kullanın**'
-    message.reply_text(
-        text=moon, 
-        quote=False,
+    await message.reply_text(
+    f"""● **👋 **Selam** {message.from_user.mention}\n\n**ℹ️ Ben müzik indirme botuyum istediğin müziği indirebilirim**\n\n**✅ Yardım için** /help **komutunu kullanın**""",
         reply_markup=InlineKeyboardMarkup(
             [[
                     InlineKeyboardButton('Support Grup ❄️', url=f'https://t.me/{Config.GROUP}'),
