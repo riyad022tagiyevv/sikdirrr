@@ -12,7 +12,7 @@
 - BOT_OWNER - Sahip kullanıcı adınız. 
 - PLAYLIST_ID - Oluşturduğunuz playlist kanalın ID si
 - BOT_USERNAME - Botun kullanıcı adı
-- GROUP - Grubunuzu kullanıcı adı
+- GROUP - Grubunuzun kullanıcı adı
 
 # Deploy
 <a href="https://heroku.com/deploy?template=https://github.com/amahocam/M-zik-indirme-download-">
