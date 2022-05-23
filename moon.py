@@ -14,7 +14,7 @@ from pyrogram.types import (
 #config#
 
 bot = Client(
-    'DemonBot',
+    'moonBot',
     bot_token = Config.BOT_TOKEN,
     api_id = Config.API_ID,
     api_hash = Config.API_HASH
@@ -24,9 +24,9 @@ bot = Client(
 
 @bot.on_message(filters.command(['start']))
 def start(client, message):
-    demon = f'👋 **Selam** {message.from_user.mention}\n\n**ℹ️ Ben müzik indirme botuyum istediğin müziği indirebilirim**\n\n**✅ Yardım için** /help **komutunu kullanın**'
+    moon = f'👋 **Selam** {message.from_user.mention}\n\n**ℹ️ Ben müzik indirme botuyum istediğin müziği indirebilirim**\n\n**✅ Yardım için** /help **komutunu kullanın**'
     message.reply_text(
-        text=demon, 
+        text=moon, 
         quote=False,
         reply_markup=InlineKeyboardMarkup(
             [[
@@ -88,7 +88,7 @@ def bul(_, message):
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f"**🎶 İndirildi. İyi Dinlemeler [gяαιfℓуяι¢ѕ ρℓαуℓιѕт](t.me/graiflyrics) 🎶.**"
+        rep = f"**🎶 [gяαιfℓуяι¢ѕ ρℓαуℓιѕт](t.me/graiflyrics) 🎶.**"
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(float(dur_arr[i])) * secmul
