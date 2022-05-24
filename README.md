@@ -5,8 +5,8 @@
 </p> 
 
 ### Gerekli olanlar 🍭
-- API_ID - [my.telegram.org](my.telegram.org) sitesinden ala bilirsiniz.
-- API_HASH - [my.telegram.org](my.telegram.org) sitesinden ala bilirsiniz.
+- API_ID - [my.telegram.org](https://my.telegram.org/auth) sitesinden ala bilirsiniz.
+- API_HASH - [my.telegram.org](https://my.telegram.org/auth) sitesinden ala bilirsiniz.
 - BOT_TOKEN - [@Botfather](https://t.me/Botfather) botundan ala bilirsiniz. 
 - PLAYLIST_NAME - Playlist kanalı oluşturun ve kullanıcı adını yazınız.
 - BOT_OWNER - Sahip kullanıcı adınız. 
