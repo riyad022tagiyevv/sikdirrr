@@ -26,7 +26,7 @@ bot = Client(
 async def start_(client: Client, message: Message):
     await message.reply_sticker("CAACAgQAAxkBAAI8bmKIvgnlJyCrq9HIxSvCZCbm5CEjAAIaEAACpvFxHg-Z648-SCRWJAQ")
     await message.reply_text(
-    f"""● **👋 **Selam** {message.from_user.mention}\n\n**ℹ️ Ben müzik indirme botuyum istediğin müziği indirebilirim**\n\n**✅ Yardım için** /help **komutunu kullanın**""",
+    f"""● **👋 **Salam** {message.from_user.mention}\n\n**ℹ️ Mən music endirmə botuyam istədiyin musiqini yükləyəbilərsiniz**\n\n**✅ Yardım üçün** /help **düyməsini basın**""",
         reply_markup=InlineKeyboardMarkup(
             [[
                     InlineKeyboardButton('Support Grup ❄️', url=f'https://t.me/{Config.GROUP}'),
@@ -41,7 +41,7 @@ async def start_(client: Client, message: Message):
 
 @bot.on_message(filters.command(['help']))
 def help(client, message):
-    helptext = f'**Müzik indirmek için /bul komutunu kullabilirsin ⤵️**\n\n**Örnek:**\n**1.** `/bul gece mavisi`\n**2.** `/bul https://youtu.be/qLXUa89Q5WI`\n\n**'
+    helptext = f'**Musiqi yükləmək üçün /song düyməsini istifadə edə bilərsiniz ⤵️**\n\n**Misal:**\n**1.** `/song Ayaz Erdoğan baba`\n**2.** `/songs https://youtu.be/qLXUa89Q5WI`\n\n**'
     message.reply_text(
         text=helptext, 
         quote=False,
@@ -58,14 +58,14 @@ def help(client, message):
 
 @bot.on_message(filters.command("alive") & filters.user(Config.BOT_OWNER))
 async def live(client: Client, message: Message):
-    livemsg = await message.reply_text('`Merhaba Sahip Bey 🖤`')
+    livemsg = await message.reply_text('`Salam Sahib Bəy 🤍`')
     
 #musik indirme#
 
-@bot.on_message(filters.command("bul") & ~filters.edited)
+@bot.on_message(filters.command("song") & ~filters.edited)
 def bul(_, message):
     query = " ".join(message.command[1:])
-    m = message.reply("<b>Şarkınız Aranıyor ... 🔍</b>")
+    m = message.reply("<b>Mahnınız Axtarılır ... 🔍</b>")
     ydl_ops = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
@@ -78,26 +78,26 @@ def bul(_, message):
         duration = results[0]["duration"]
 
     except Exception as e:
-        m.edit("<b>❌ Üzgünüm şarkı bulunamadı.\n\n Lütfen başka şarkı ismi söyleyin.</b>")
+        m.edit("<b>❌ Bağışlayın mahnı Tapılmadı.\n\n Xaiş başqa mahnı adı deyin.</b>")
         print(str(e))
         return
-    m.edit("<b>📥 İndirme İşlemi Başladı...</b>")
+    m.edit("<b>📥 Yükləmə İşi Başladı...</b>")
     try:
         with yt_dlp.YoutubeDL(ydl_ops) as ydl:
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f"🎵 𝐘𝐮̈𝐤𝐥𝐞𝐝𝐢 [𝐌𝐮𝐬𝐢𝐜 𝐁𝐨𝐭](https://t.me/{Config.BOT_USERNAME})"
+        rep = f"🎵 Yüklədi [AzeSongBot](https://t.me/{Config.BOT_USERNAME})"
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(float(dur_arr[i])) * secmul
             secmul *= 60
-        m.edit("📤 Yükleniyor..")
-        message.reply_audio(audio_file, caption=rep, parse_mode='md',quote=False, title=title, duration=dur, thumb=thumb_name, performer="@mutsuz_panda")
+        m.edit("📤 Yüklənir..")
+        message.reply_audio(audio_file, caption=rep, parse_mode='md',quote=False, title=title, duration=dur, thumb=thumb_name, performer="@Thagiyevvvv")
         m.delete()
-        bot.send_audio(chat_id=Config.PLAYLIST_ID, audio=audio_file, caption=rep, performer="@mutsuz_panda", parse_mode='md', title=title, duration=dur, thumb=thumb_name)
+        bot.send_audio(chat_id=Config.PLAYLIST_ID, audio=audio_file, caption=rep, performer="@Thagiyevvvv", parse_mode='md', title=title, duration=dur, thumb=thumb_name)
     except Exception as e:
-        m.edit("<b>❌ Hatanın, düzelmesini bekleyiniz.</b>")
+        m.edit("<b>❌ Xətanın, düzəlmsəini gözləyin.</b>")
         print(e)
 
     try:
