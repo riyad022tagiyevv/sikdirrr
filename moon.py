@@ -26,7 +26,7 @@ bot = Client(
 async def start_(client: Client, message: Message):
     await message.reply_sticker("CAACAgQAAxkBAAI8bmKIvgnlJyCrq9HIxSvCZCbm5CEjAAIaEAACpvFxHg-Z648-SCRWJAQ")
     await message.reply_text(
-    f"""● **👋 **Salam** {message.from_user.mention}\n\n**ℹ️ Mən music endirmə botuyam istədiyin musiqini yükləyəbilərsiniz**\n\n**✅ Yardım üçün** /help **düyməsini basın**""",
+    f"""● **🇦🇿🐊 **Salam** {message.from_user.mention}\n\n**ℹ️ Mən music endirmə botuyam istədiyin musiqini yükləyəbilərsiniz**\n\n**✅ Yardım üçün** /help **düyməsini basın**""",
         reply_markup=InlineKeyboardMarkup(
             [[
                     InlineKeyboardButton('Support Grup ❄️', url=f'https://t.me/{Config.GROUP}'),
