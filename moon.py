@@ -47,7 +47,7 @@ def help(client, message):
         quote=False,
         reply_markup=InlineKeyboardMarkup(
             [[
-                    InlineKeyboardButton('Support Grup ❄️', url=f'https://t.me/{Config.GROUP}'),
+                    InlineKeyboardButton('Support Qrupu ❄️', url=f'https://t.me/{Config.GROUP}'),
                   ],[
                     InlineKeyboardButton('Playlist 🎵', url=f'https://t.me/{Config.PLAYLIST_NAME}')
                 ]
